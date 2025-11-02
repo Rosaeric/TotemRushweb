@@ -99,8 +99,8 @@
         </div>
       </a>
 
-      <!-- Support Page -->
-      <a href="/support" class="item" aria-label="Support">
+      <!-- Support (on-page form) -->
+      <a href="#support-request" class="item" aria-label="Support">
         <div>
           <img src="/img/key.png" alt="Support icon" class="img" />
           <p class="subtitle">get help on our</p>
@@ -116,7 +116,85 @@
         other players on <span id="ip">TotemRush.org</span>
       </p>
     </section>
+
+    <!-- Support Request (email-based, no backend) -->
+    <section class="section" id="support-request" aria-labelledby="support-title" style="max-width:1100px; margin:2rem auto; padding:0 1rem;">
+      <h2 id="support-title" style="text-align:center; margin-bottom:1rem;">Submit a Support Request</h2>
+      <form id="supportForm" class="card" onsubmit="return buildEmail();" style="background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:1.1rem;">
+        <label for="ign"><strong>IGN</strong></label><br>
+        <input id="ign" name="ign" type="text" required placeholder="Your Minecraft name" style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff;">
+
+        <label for="category"><strong>Category</strong></label><br>
+        <select id="category" name="category" required style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff;">
+          <option value="Billing">Billing & Store</option>
+          <option value="Gameplay">Gameplay</option>
+          <option value="Bug">Bug Report</option>
+          <option value="Player Report">Player Report</option>
+          <option value="Appeal">Appeal</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="subject"><strong>Subject</strong></label><br>
+        <input id="subject" name="subject" type="text" required placeholder="Short title" style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff;">
+
+        <label for="details"><strong>Details</strong></label><br>
+        <textarea id="details" name="details" rows="6" required placeholder="Describe the issue. Include order ID, timestamps, steps to reproduce, etc." style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff;"></textarea>
+
+        <div style="display:flex; gap:.6rem; flex-wrap:wrap;">
+          <button type="submit" class="btn" style="padding:.9rem 1.2rem; border-radius:14px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff; font-weight:700;">Open Email Draft</button>
+          <button type="button" class="btn" onclick="copyRequest();" style="padding:.9rem 1.2rem; border-radius:14px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff; font-weight:700;">Copy Details</button>
+        </div>
+        <p class="muted" style="margin-top:.6rem; color:#a9b1bd;">This creates an email to <span class="kbd" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; background:#0b0c10; border:1px solid rgba(255,255,255,0.12); border-radius:6px; padding:0 .35rem;">support@totemrush.org</span>.</p>
+      </form>
+    </section>
   </main>
+
+  <script>
+    // Build a prefilled mailto from form inputs (no backend needed)
+    function buildEmail() {
+      var ign = document.getElementById('ign').value.trim();
+      var cat = document.getElementById('category').value;
+      var subject = document.getElementById('subject').value.trim();
+      var details = document.getElementById('details').value.trim();
+
+      var lines = [
+        'IGN: ' + ign,
+        'Category: ' + cat,
+        'Subject: ' + subject,
+        'Details:',
+        details
+      ];
+      var body = encodeURIComponent(lines.join('\n'));
+      var mailto = 'mailto:support@totemrush.org?subject=' + encodeURIComponent('[Support][' + cat + '] ' + subject) + '&body=' + body;
+
+      window.location.href = mailto;
+      return false; // prevent default submit
+    }
+
+    // Copy request body to clipboard
+    function copyRequest() {
+      var ign = document.getElementById('ign').value.trim();
+      var cat = document.getElementById('category').value;
+      var subject = document.getElementById('subject').value.trim();
+      var details = document.getElementById('details').value.trim();
+      var text = 'IGN: ' + ign + '\nCategory: ' + cat + '\nSubject: ' + subject + '\nDetails:\n' + details;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function(){
+          alert('Details copied to clipboard.');
+        }, function(){
+          alert('Copy failed. Please copy manually.');
+        });
+      } else {
+        // Fallback for older browsers
+        var ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); alert('Details copied to clipboard.'); }
+        catch(e) { alert('Copy failed. Please copy manually.'); }
+        document.body.removeChild(ta);
+      }
+    }
+  </script>
 
   <!-- Scripts -->
   <script src="/js/firefly.js" type="text/javascript" defer></script>
