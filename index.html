@@ -1,175 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- TotemRush — Support Page | v1.0 (2025-11-02) -->
+  <!--
+    TotemRush — Landing/Portal Page
+    Refactor date: 2025-11-02
+    Notes:
+    - Replace /img/og.jpg with your real social share image (1200x630)
+    - Upload /img/logo.png as your logo (transparent PNG recommended)
+  -->
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Support — TotemRush</title>
-  <meta name="description" content="Get help with TotemRush: billing, store purchases, gameplay issues, bugs, and appeals. contact support by form or email." />
-  <link rel="canonical" href="https://www.totemrush.org/support/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/stylesheet.css" />
+
+  <title>TotemRush — Official Minecraft Server</title>
+  <meta name="description" content="TotemRush is a new and awesome Minecraft server. Join with IP TotemRush.org." />
+  <link rel="canonical" href="https://www.totemrush.org/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TotemRush — Official Website" />
+  <meta property="og:site_name" content="TotemRush" />
+  <meta property="og:description" content="Play on TotemRush! IP: TotemRush.org" />
+  <meta property="og:url" content="https://www.totemrush.org/" />
+  <meta property="og:image" content="/img/og.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TotemRush — Official Website" />
+  <meta name="twitter:description" content="Play on TotemRush! IP: TotemRush.org" />
+  <meta name="twitter:image" content="/img/og.jpg" />
+
+  <!-- Theme color for mobile address bar -->
   <meta name="theme-color" content="#0e0f13" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Support — TotemRush">
-  <meta property="og:description" content="Need help? Visit the TotemRush support center for billing, gameplay, bug reports and appeals.">
-  <meta property="og:url" content="https://www.totemrush.org/support/">
-  <meta property="og:image" content="/img/og.jpg">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
 
-  <style>
-    /* Minimal page-scoped helpers to complement /css/stylesheet.css */
-    :root { --card-bg: rgba(255,255,255,0.06); --card-bd: rgba(255,255,255,0.12); }
-    body { font-family: 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; }
-    .support-hero { text-align:center; padding: 4rem 1rem 2rem; }
-    .support-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 .5rem; }
-    .support-hero p { color:#cfd3dc; margin: 0 auto; max-width: 60ch; }
-    .actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin:2rem 0 3rem; }
-    .btn { display:inline-block; padding:.9rem 1.2rem; border-radius:14px; border:1px solid var(--card-bd); background:var(--card-bg); text-decoration:none; color:#fff; font-weight:700; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; }
-    .card { background:var(--card-bg); border:1px solid var(--card-bd); border-radius:18px; padding:1.1rem; }
-    .card h3 { margin:.2rem 0 .4rem; font-size:1.1rem; }
-    .card p { margin:0; color:#cfd3dc; }
-    .logo { display:flex; justify-content:center; padding:1.5rem 0 0; }
-    .logo img { width:120px; height:auto; }
-    .section { padding: 1.5rem 1rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-    .faq details { background:var(--card-bg); border:1px solid var(--card-bd); border-radius:14px; padding:1rem 1.1rem; }
-    .faq details + details { margin-top:.8rem; }
-    .faq summary { cursor:pointer; font-weight:700; }
-    .muted { color:#a9b1bd; }
-    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; background:#0b0c10; border:1px solid var(--card-bd); border-radius:6px; padding:0 .35rem; }
-    footer { text-align:center; padding:2rem 1rem 3rem; color:#a9b1bd; }
-  </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/stylesheet.css" />
 
-  <!-- FAQ structured data -->
+  <!-- Optional icons (uncomment and add files if you have them)
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+  -->
+
+  <!-- Structured data (Organization) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"I purchased but didn't receive my rank/key.","acceptedAnswer":{"@type":"Answer","text":"Most purchases apply within 10 minutes. Make sure you were online at checkout and rejoin the server. If it still hasn't arrived after 30 minutes, submit a billing request with your order ID and Minecraft username."}},
-      {"@type":"Question","name":"How do I appeal a punishment?","acceptedAnswer":{"@type":"Answer","text":"Appeals are handled via our support request form. Provide your IGN, approximate date, and why you believe the action should be reviewed."}},
-      {"@type":"Question","name":"How do I report a bug or player?","acceptedAnswer":{"@type":"Answer","text":"Use the Bug Reports or Player Reports categories in our support request form. Include steps to reproduce, screenshots, or video if possible."}}
+    "@type": "Organization",
+    "name": "TotemRush",
+    "url": "https://www.totemrush.org/",
+    "logo": "https://www.totemrush.org/img/logo.png",
+    "sameAs": [
+      "https://discord.gg/jwKXpebvN8",
+      "https://store.totemrush.org"
     ]
   }
   </script>
+
+  <!-- DNS Prefetch for external domains -->
+  <link rel="dns-prefetch" href="//discord.gg" />
+  <link rel="dns-prefetch" href="//store.totemrush.org" />
 </head>
 <body>
+  <!-- Decorative particles background (driven by your JS) -->
   <div id="tsparticles" aria-hidden="true"></div>
 
-  <header class="logo" aria-label="TotemRush logo">
-    <a href="/" aria-label="Back to home"><img src="/img/logo.png" alt="TotemRush logo"></a>
-  </header>
+  <noscript>
+    <div style="padding:1rem; text-align:center; background:#111; color:#fff; font-family: 'Open Sans', system-ui, sans-serif;">
+      JavaScript is required for live player count and effects. You can still join using IP <strong>TotemRush.org</strong>.
+    </div>
+  </noscript>
 
-  <main>
-    <section class="support-hero">
-      <h1>Support Center</h1>
-      <p>Need help with purchases, gameplay, bugs, or appeals? Choose a category below or contact us directly. We aim to respond quickly on Discord.</p>
-      <div class="actions" role="navigation" aria-label="Support actions">
-        <a class="btn" href="#request">Submit a Support Request</a>
-        <a class="btn" href="mailto:support@totemrush.org?subject=TotemRush%20Support&body=IGN%3A%0ACategory%3A%0ASubject%3A%0ADetails%3A">Email Support</a>
-      </div>
-      <p class="muted">Tip: Include your <span class="kbd">IGN</span>, category, and details for faster help.</p>
-    </section>
+  <main class="container" role="main">
+    <header class="logo" aria-label="TotemRush logo">
+      <img src="/img/logo.png" alt="TotemRush logo" width="256" height="256" />
+    </header>
 
-    <section class="section" id="categories" aria-labelledby="cat-title">
-      <h2 id="cat-title" style="text-align:center; margin-bottom:1rem;">Common Topics</h2>
-      <div class="grid">
-        <a class="card" href="#billing"><h3>Billing & Store</h3><p>Missing ranks, failed payments, refunds.</p></a>
-        <a class="card" href="#gameplay"><h3>Gameplay & Help</h3><p>Server rules, commands, stuck issues.</p></a>
-        <a class="card" href="#bugs"><h3>Bug Reports</h3><p>Report glitches, exploits, or crashes.</p></a>
-        <a class="card" href="#reports"><h3>Player Reports</h3><p>Cheating, harassment, or griefing.</p></a>
-        <a class="card" href="#appeals"><h3>Appeals</h3><p>Appeal mutes, kicks, or bans.</p></a>
-        <a class="card" href="#status"><h3>Status</h3><p>Server IP, ports, and uptime info.</p></a>
-      </div>
-    </section>
-
-    <section class="section" id="billing" aria-labelledby="billing-title">
-      <h2 id="billing-title">Billing & Store</h2>
-      <ul>
-        <li>Most purchases arrive within <strong>10 minutes</strong>. Relog if you were offline at checkout.</li>
-        <li>Check your email for your <strong>order receipt/ID</strong>.</li>
-        <li>If nothing after 30 minutes: <a href="#request">submit a billing request</a> with your IGN + order ID.</li>
-      </ul>
-    </section>
-
-    <section class="section" id="gameplay" aria-labelledby="gameplay-title">
-      <h2 id="gameplay-title">Gameplay & Help</h2>
-      <ul>
-        <li>IP: <strong>TotemRush.org</strong>, Port: <strong>25870</strong></li>
-        <li>Use <span class="kbd">/help</span> or <span class="kbd">/rules</span> in-game for quick info.</li>
-        <li>Stuck? Try <span class="kbd">/spawn</span> or rejoin; otherwise <a href="#request">open a support request</a>.</li>
-      </ul>
-    </section>
-
-    <section class="section" id="bugs" aria-labelledby="bugs-title">
-      <h2 id="bugs-title">Bug Reports</h2>
-      <p>Please include steps to reproduce and screenshots/video if possible.</p>
-      <ol>
-        <li>Describe what happened vs. what you expected.</li>
-        <li>Steps to reproduce (1–2–3).</li>
-        <li>Your IGN and approximate time.</li>
-      </ol>
-      <p><a class="btn" href="#request">Report a bug</a></p>
-    </section>
-
-    <section class="section" id="reports" aria-labelledby="reports-title">
-      <h2 id="reports-title">Player Reports</h2>
-      <p>Collect evidence where possible (screenshots/video) and include timestamps.</p>
-      <p><a class="btn" href="#request">Report a player</a></p>
-    </section>
-
-    <section class="section" id="appeals" aria-labelledby="appeals-title">
-      <h2 id="appeals-title">Appeals</h2>
-      <p>Appeals are reviewed by staff. Be honest and concise.</p>
-      <ul>
-        <li>Provide IGN and approximate date/time of action.</li>
-        <li>Explain why you believe the action should be reviewed.</li>
-      </ul>
-      <p><a class="btn" href="#request">Start an appeal</a></p>
-    </section>
-
-    <section class="section" id="status" aria-labelledby="status-title">
-      <h2 id="status-title">Server Status & Info</h2>
-      <p>IP: <strong id="ip">TotemRush.org</strong> • Port: <strong>25870</strong></p>
-      <p>Players online: <span id="sip" data-ip="TotemRush.org" data-port="25870"></span></p>
-      <p class="muted">Live count requires JavaScript and your existing <code>main.js</code> integration.</p>
-    </section>
-
-    <section class="section faq" id="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">FAQs</h2>
-      <details>
-        <summary>I purchased but didn't receive my rank/key.</summary>
+    <nav class="items" aria-label="Primary">
+      <!-- Discord -->
+      <a href="https://discord.gg/jwKXpebvN8" class="item" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord (opens in a new tab)">
         <div>
-          <p>Most purchases apply within 10 minutes. Make sure you were online at checkout and rejoin the server. If it still hasn't arrived after 30 minutes, submit a billing request with your order ID and Minecraft username.</p>
+          <img src="/img/forums.png" alt="Discord icon" class="img" />
+          <p class="subtitle">chat on our</p>
+          <p class="title">Discord</p>
         </div>
-      </details>
-      <details>
-        <summary>How do I appeal a punishment?</summary>
+      </a>
+
+      <!-- Store -->
+      <a href="https://store.totemrush.org" class="item" target="_blank" rel="noopener noreferrer" aria-label="Visit our Store (opens in a new tab)">
         <div>
-          <p>Appeals are handled via our support request form. Provide your IGN, approximate date, and why you believe the action should be reviewed.</p>
+          <img src="/img/store.png" alt="Store icon" class="img" />
+          <p class="subtitle">donate on our</p>
+          <p class="title">Store</p>
         </div>
-      </details>
-      <details>
-        <summary>How do I report a bug or player?</summary>
+      </a>
+
+      <!-- Support (on-page form) -->
+      <a href="#support-request" class="item" aria-label="Support">
         <div>
-          <p>Use the Bug Reports or Player Reports categories in our support request form. Include steps to reproduce, screenshots, or video if possible.</p>
+          <img src="/img/key.png" alt="Support icon" class="img" />
+          <p class="subtitle">get help on our</p>
+          <p class="title">Support</p>
         </div>
-      </details>
+      </a>
+    </nav>
+
+    <section class="playercount" id="playercount">
+      <!-- Set both your IP and port below for your JS to read -->
+      <p>
+        Join <span id="sip" data-ip="TotemRush.org" data-port="25870"></span>
+        other players on <span id="ip">TotemRush.org</span>
+      </p>
     </section>
-  
-    <!-- Request form (Formspree submission) -->
-    <section class="section" id="request" aria-labelledby="request-title">
-      <h2 id="request-title">Submit a Support Request</h2>
-      <form id="supportForm" class="card" action="https://formspree.io/f/mwpwyjpr" method="POST">
+
+    <!-- Support Request (Formspree, no email app opens) -->
+    <section class="section" id="support-request" aria-labelledby="support-title" style="max-width:1100px; margin:2rem auto; padding:0 1rem;">
+      <h2 id="support-title" style="text-align:center; margin-bottom:1rem;">Submit a Support Request</h2>
+
+      <form id="supportForm"
+            class="card"
+            action="https://formspree.io/f/mwpwyjpr"
+            method="POST"
+            style="background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:1.1rem;">
+        <!-- Required fields -->
         <label for="ign"><strong>IGN</strong></label><br>
-        <input id="ign" name="ign" type="text" required placeholder="Your Minecraft name" style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid var(--card-bd); background:var(--card-bg); color:#fff;">
+        <input id="ign" name="ign" type="text" required placeholder="Your Minecraft name"
+               style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff;">
 
         <label for="category"><strong>Category</strong></label><br>
-        <select id="category" name="category" required style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid var(--card-bd); background:var(--card-bg); color:#fff;">
+        <select id="category" name="category" required
+                style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff;">
           <option value="Billing">Billing & Store</option>
           <option value="Gameplay">Gameplay</option>
           <option value="Bug">Bug Report</option>
@@ -179,66 +143,40 @@
         </select>
 
         <label for="subject"><strong>Subject</strong></label><br>
-        <input id="subject" name="subject" type="text" required placeholder="Short title" style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid var(--card-bd); background:var(--card-bg); color:#fff;">
+        <input id="subject" name="subject" type="text" required placeholder="Short title"
+               style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff;">
 
         <label for="details"><strong>Details</strong></label><br>
-        <textarea id="details" name="details" rows="6" required placeholder="Describe the issue. Include order ID, timestamps, steps to reproduce, etc." style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid var(--card-bd); background:var(--card-bg); color:#fff;"></textarea>
+        <textarea id="details" name="details" rows="6" required
+                  placeholder="Describe the issue. Include order ID, timestamps, steps to reproduce, etc."
+                  style="width:100%; margin:.4rem 0 1rem; padding:.6rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff;"></textarea>
 
-        <button type="submit" class="btn" style="padding:.9rem 1.2rem; border-radius:14px; border:1px solid var(--card-bd); background:var(--card-bg); color:#fff; font-weight:700;">Submit Request</button>
-        <p class="muted" style="margin-top:.6rem;">This sends your request directly to the TotemRush support team.</p>
+        <!-- Optional hidden fields -->
+        <!-- Redirect after submit (create /support/success.html if you want this) -->
+        <!-- <input type="hidden" name="_redirect" value="https://www.totemrush.org/support/success.html"> -->
+
+        <!-- Basic honeypot (spam protection) -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <button type="submit" class="btn"
+                style="padding:.9rem 1.2rem; border-radius:14px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); color:#fff; font-weight:700;">
+          Submit Request
+        </button>
+
+        <p class="muted" style="margin-top:.6rem; color:#a9b1bd;">
+          This sends your request directly to the TotemRush support team.
+        </p>
       </form>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> TotemRush. Not affiliated with Mojang AB.</p>
-  </footer>
+  <!-- Scripts -->
+  <script src="/js/firefly.js" type="text/javascript" defer></script>
+  <script src="/js/main.js" type="text/javascript" defer></script>
 
-  <script>
-    // Year stamp
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Build a prefilled mailto from form inputs (no backend needed)
-    function buildEmail() {
-      var ign = document.getElementById('ign').value.trim();
-      var cat = document.getElementById('category').value;
-      var subject = document.getElementById('subject').value.trim();
-      var details = document.getElementById('details').value.trim();
-
-      var lines = [
-        'IGN: ' + ign,
-        'Category: ' + cat,
-        'Subject: ' + subject,
-        'Details:',
-        details
-      ];
-      var body = encodeURIComponent(lines.join('
-'));
-      var mailto = 'mailto:support@totemrush.org?subject=' + encodeURIComponent('[Support][' + cat + '] ' + subject) + '&body=' + body;
-
-      window.location.href = mailto;
-      return false; // prevent default submit
-    }
-
-    // Copy request body to clipboard
-    function copyRequest() {
-      var ign = document.getElementById('ign').value.trim();
-      var cat = document.getElementById('category').value;
-      var subject = document.getElementById('subject').value.trim();
-      var details = document.getElementById('details').value.trim();
-      var text = 'IGN: ' + ign + '
-Category: ' + cat + '
-Subject: ' + subject + '
-Details:
-' + details;
-      navigator.clipboard.writeText(text).then(function(){
-        alert('Details copied to clipboard.');
-      }, function(){
-        alert('Copy failed. Please copy manually.');
-      });
-    }
-  </script>
-  <script src="/js/firefly.js" defer></script>
-  <script src="/js/main.js" defer></script>
+  <!--
+    Credits:
+    Original template by Billy (https://bybilly.uk). Heavily cleaned up and modernized.
+  -->
 </body>
 </html>
