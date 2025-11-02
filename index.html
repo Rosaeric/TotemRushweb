@@ -1,77 +1,130 @@
-<!-- Proudly created by Billy (https://bybilly.uk) -->
-<!-- Version: 1.10 -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Info meta tags, important for social media + SEO -->
-	<title>TotemRush - Official Website</title>
-	<meta name="description" content="TotemRush is a new and awesome Minecraft server. You can join with the IP 'TotemRush.org'.">
-	<meta property="og:title" content="TotemRush - Official Website">
-	<meta property="og:site_name" content="TotemRush ">
-	<meta property="og:description" content="TotemRush is a new and awesome Minecraft server. You can join with the IP 'TotemRush.org'.">
-	<meta property="og:image" content="https://bybilly.uk/portal/img/minecraft.jpg">
-	<meta property="og:url" content="https://bybilly.uk/">
-	<meta name="twitter:card" content="summary_large_image">
+  <!--
+    TotemRush — Landing/Portal Page
+    Refactor date: 2025-11-02
+    Notes:
+    - Replace /img/og.jpg with your real social share image (1200x630)
+    - Upload /img/logo.png as your logo (transparent PNG recommended)
+  -->
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="utf-8">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/stylesheet.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>TotemRush — Official Minecraft Server</title>
+  <meta name="description" content="TotemRush is a new and awesome Minecraft server. Join with IP TotemRush.org." />
+  <link rel="canonical" href="https://www.totemrush.org/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TotemRush — Official Website" />
+  <meta property="og:site_name" content="TotemRush" />
+  <meta property="og:description" content="Play on TotemRush! IP: TotemRush.org" />
+  <meta property="og:url" content="https://www.totemrush.org/" />
+  <meta property="og:image" content="/img/og.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TotemRush — Official Website" />
+  <meta name="twitter:description" content="Play on TotemRush! IP: TotemRush.org" />
+  <meta name="twitter:image" content="/img/og.jpg" />
+
+  <!-- Theme color for mobile address bar -->
+  <meta name="theme-color" content="#0e0f13" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/stylesheet.css" />
+
+  <!-- Optional icons (uncomment and add files if you have them)
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+  -->
+
+  <!-- Structured data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TotemRush",
+    "url": "https://www.totemrush.org/",
+    "logo": "https://www.totemrush.org/img/logo.png",
+    "sameAs": [
+      "https://discord.gg/jwKXpebvN8",
+      "https://store.totemrush.org"
+    ]
+  }
+  </script>
+
+  <!-- DNS Prefetch for external domains -->
+  <link rel="dns-prefetch" href="//discord.gg" />
+  <link rel="dns-prefetch" href="//store.totemrush.org" />
 </head>
 <body>
-	<!-- The following line is used for the background particles -->
-	<div id="tsparticles"></div>
+  <!-- Decorative particles background (driven by your JS) -->
+  <div id="tsparticles" aria-hidden="true"></div>
 
-	<div class="container">
-		<div class="logo">
-			<!-- In the img folder, upload your logo -->
-			<!-- Make sure you name it 'logo.png' or update the code below -->
-			<img src="img/logo.png" alt="MyServer logo">
-		</div>
+  <noscript>
+    <div style="padding:1rem; text-align:center; background:#111; color:#fff; font-family: 'Open Sans', system-ui, sans-serif;">
+      JavaScript is required for live player count and effects. You can still join using IP <strong>TotemRush.org</strong>.
+    </div>
+  </noscript>
 
-		<div class="items">
-			<!-- Replace # with your Discord invite URL-->
-			<a href="https://discord.gg/jwKXpebvN8" class="item">
-			<div>
-				<img src="img/forums.png" alt="Minecraft forums icon" class="img">
-				<p class="subtitle">chat on our</p>
-				<p class="title">Discord</p>
-			</div>
-			</a>
+  <main class="container" role="main">
+    <header class="logo" aria-label="TotemRush logo">
+      <img src="/img/logo.png" alt="TotemRush logo" width="256" height="256" />
+    </header>
 
-			<!-- Replace # with your store URL -->
-			<a href="store.totemrush.org" class="item">
-			<div>
-				<img src="img/store.png" alt="Minecraft store icon" class="img">
-				<p class="subtitle">donate on our</p>
-				<p class="title">Store</p>
-			</div>
-			</a>
+    <nav class="items" aria-label="Primary">
+      <!-- Discord -->
+      <a href="https://discord.gg/jwKXpebvN8" class="item" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord (opens in a new tab)">
+        <div>
+          <img src="/img/forums.png" alt="Discord icon" class="img" />
+          <p class="subtitle">chat on our</p>
+          <p class="title">Discord</p>
+        </div>
+      </a>
 
-			<!-- Replace # with your vote URL -->
-			<a href="store.totemrush.org" class="item">
-			<div>
-				<img src="img/key.png" alt="Minecraft voting icon" class="img">
-				<p class="subtitle">support us by donateing</p>
-				<p class="title">keys</p>
-			</div>
-			</a>
+      <!-- Store -->
+      <a href="https://store.totemrush.org" class="item" target="_blank" rel="noopener noreferrer" aria-label="Visit our Store (opens in a new tab)">
+        <div>
+          <img src="/img/store.png" alt="Store icon" class="img" />
+          <p class="subtitle">donate on our</p>
+          <p class="title">Store</p>
+        </div>
+      </a>
 
-		</div>
+      <!-- Support Page -->
+      <a href="/support" class="item" aria-label="Support">
+        <div>
+          <img src="/img/key.png" alt="Support icon" class="img" />
+          <p class="subtitle">get help on our</p>
+          <p class="title">Support</p>
+        </div>
+      </a>
+    </nav>
 
-		<div class="playercount" id="playercount">
-			<!-- Replace play.cubecraft.net with your server IP address -->
-			<!-- Do it on both line 69 and line 70 -->
-			<!-- Please set both your IP and port -->
-			<p>Join <span id="sip" data-ip="TotemRush.org" data-port="25870">
-			</span> other players on <span id="ip">TotemRush.org</span></p>
-		</div>
-	</div>
+    <section class="playercount" id="playercount">
+      <!-- Set both your IP and port below for your JS to read -->
+      <p>
+        Join <span id="sip" data-ip="TotemRush.org" data-port="25870"></span>
+        other players on <span id="ip">TotemRush.org</span>
+      </p>
+    </section>
+  </main>
 
-	<script src="js/firefly.js" type="text/javascript"></script>
-	<script src="js/main.js" type="text/javascript"></script>
+  <!-- Scripts -->
+  <script src="/js/firefly.js" type="text/javascript" defer></script>
+  <script src="/js/main.js" type="text/javascript" defer></script>
+
+  <!--
+    Credits:
+    Original template by Billy (https://bybilly.uk). Heavily cleaned up and modernized.
+  -->
 </body>
 </html>
